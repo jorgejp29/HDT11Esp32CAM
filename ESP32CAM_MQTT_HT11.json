@@ -1,0 +1,223 @@
+[
+    {
+        "id": "0287d49d32def3d7",
+        "type": "tab",
+        "label": "Flow 4",
+        "disabled": false,
+        "info": ""
+    },
+    {
+        "id": "3737d7323e7189f1",
+        "type": "mqtt in",
+        "z": "0287d49d32def3d7",
+        "name": "",
+        "topic": "esp32/data_H",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "edd3004a.11da88",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "x": 130,
+        "y": 120,
+        "wires": [
+            [
+                "0713c715f0757de7",
+                "6ce9ed4e5d6fb499"
+            ]
+        ]
+    },
+    {
+        "id": "275b0cad5da1bec2",
+        "type": "ui_switch",
+        "z": "0287d49d32def3d7",
+        "name": "",
+        "label": "switch",
+        "tooltip": "",
+        "group": "f370cfb7.9f1c18",
+        "order": 0,
+        "width": 0,
+        "height": 0,
+        "passthru": true,
+        "decouple": "false",
+        "topic": "topic",
+        "topicType": "msg",
+        "style": "",
+        "onvalue": "true",
+        "onvalueType": "bool",
+        "onicon": "",
+        "oncolor": "",
+        "offvalue": "false",
+        "offvalueType": "bool",
+        "officon": "",
+        "offcolor": "",
+        "animate": false,
+        "x": 110,
+        "y": 260,
+        "wires": [
+            [
+                "1024ed839d4d8be9"
+            ]
+        ]
+    },
+    {
+        "id": "1024ed839d4d8be9",
+        "type": "mqtt out",
+        "z": "0287d49d32def3d7",
+        "name": "",
+        "topic": "esp32/output",
+        "qos": "2",
+        "retain": "",
+        "respTopic": "",
+        "contentType": "",
+        "userProps": "",
+        "correl": "",
+        "expiry": "",
+        "broker": "edd3004a.11da88",
+        "x": 370,
+        "y": 260,
+        "wires": []
+    },
+    {
+        "id": "0713c715f0757de7",
+        "type": "debug",
+        "z": "0287d49d32def3d7",
+        "name": "",
+        "active": true,
+        "tosidebar": true,
+        "console": false,
+        "tostatus": false,
+        "complete": "false",
+        "statusVal": "",
+        "statusType": "auto",
+        "x": 370,
+        "y": 80,
+        "wires": []
+    },
+    {
+        "id": "1ded4c960356cc22",
+        "type": "mqtt in",
+        "z": "0287d49d32def3d7",
+        "name": "",
+        "topic": "esp32/data_t",
+        "qos": "2",
+        "datatype": "auto",
+        "broker": "edd3004a.11da88",
+        "nl": false,
+        "rap": true,
+        "rh": 0,
+        "x": 140,
+        "y": 360,
+        "wires": [
+            [
+                "325a517d5752b763"
+            ]
+        ]
+    },
+    {
+        "id": "325a517d5752b763",
+        "type": "ui_gauge",
+        "z": "0287d49d32def3d7",
+        "name": "",
+        "group": "f9ff6e54.b1e71",
+        "order": 2,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Temperatura",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "60",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 370,
+        "y": 360,
+        "wires": []
+    },
+    {
+        "id": "6ce9ed4e5d6fb499",
+        "type": "ui_gauge",
+        "z": "0287d49d32def3d7",
+        "name": "",
+        "group": "f9ff6e54.b1e71",
+        "order": 3,
+        "width": 0,
+        "height": 0,
+        "gtype": "gage",
+        "title": "Humedad",
+        "label": "units",
+        "format": "{{value}}",
+        "min": 0,
+        "max": "100",
+        "colors": [
+            "#00b500",
+            "#e6e600",
+            "#ca3838"
+        ],
+        "seg1": "",
+        "seg2": "",
+        "x": 360,
+        "y": 140,
+        "wires": []
+    },
+    {
+        "id": "edd3004a.11da88",
+        "type": "mqtt-broker",
+        "name": "jjaimes@3.121.120.155",
+        "broker": "3.121.120.155",
+        "port": "1883",
+        "clientid": "jjaimes",
+        "usetls": false,
+        "protocolVersion": "4",
+        "keepalive": "60",
+        "cleansession": true,
+        "birthTopic": "",
+        "birthQos": "0",
+        "birthPayload": "",
+        "birthMsg": {},
+        "closeTopic": "",
+        "closeQos": "0",
+        "closePayload": "",
+        "closeMsg": {},
+        "willTopic": "",
+        "willQos": "0",
+        "willPayload": "",
+        "willMsg": {},
+        "sessionExpiry": ""
+    },
+    {
+        "id": "f370cfb7.9f1c18",
+        "type": "ui_group",
+        "name": "Tx",
+        "tab": "5341aebf.115e08",
+        "order": 2,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "f9ff6e54.b1e71",
+        "type": "ui_group",
+        "name": "Rx",
+        "tab": "5341aebf.115e08",
+        "order": 1,
+        "disp": true,
+        "width": "6",
+        "collapse": false
+    },
+    {
+        "id": "5341aebf.115e08",
+        "type": "ui_tab",
+        "name": "Comunicación MQTT con ESP32CAM",
+        "icon": "dashboard",
+        "order": 4,
+        "disabled": false,
+        "hidden": false
+    }
+]
